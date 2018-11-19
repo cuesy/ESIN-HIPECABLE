@@ -1,0 +1,39 @@
+
+/* main layout */
+
+body {
+    background-color: var(--text-color);
+    background-image: url(operating_room.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size:cover;
+  
+    margin: 0 auto;
+  }
+
+  nav {
+    margin-top: -17px;
+    margin-left:-5px;
+}
+/*header layout*/
+#topnav_right a{
+    float: right;
+    padding: 14px 16px;
+} 
+
+#topnav_left:first-child{
+    padding-left:2px;
+}
+
+#topnav_left a{
+    float:left;
+    padding: 14px 16px;
+}
+
+
+#main > div object {
+    margin: auto auto;
+    width: 800px;
+}
+
