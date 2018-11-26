@@ -1,0 +1,63 @@
+/* header */
+:root {
+  --darkB-accent-color: #525564;
+  --mainB-color:#74828F;
+  --lightB-accent-color: #96C0CE;
+  --lightR-accent-color:#BEB9B5;
+  --mainR-color:#C25B56;
+  --text-color:#FEF6EB;  
+}
+
+
+  /* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: var(--text-color);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: var(--text-color);
+  color: var(--mainB-color);
+}
+
+#main {
+  text-align: center;
+  padding: 150px 200px;
+}
+#main h1 {
+  color: var(--text-color);
+  font-size: 50px;
+}
+#main a {
+  border-radius:3px;
+  background-color: var(--mainB-color);
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 30px;
+  padding: 10px;
+}
+#main a:hover{
+  background-color: var(--text-color);
+  color:var(--mainB-color);
+}
+  /* fonts */ 
+  
+  body {
+    font-family: 'Karla', sans-serif;
+  }
+
+  p {
+    font-family: 'Karla', sans-serif;
+    line-height: 1.4em;
+  }
+
+  #main h1 {
+    font-weight:bold;
+  }
+  
+  

@@ -1,0 +1,62 @@
+/* header */
+
+body > header {
+    background-color: #046dd5;
+    
+    padding: 1em;
+  }
+
+  body > header h1, body > header h2{
+    margin: 0;
+  }
+
+  body > header a {
+    color: white;
+    text-decoration: none;  
+  }
+
+  body > header #signup a {
+    padding: 0 1em;
+  }
+
+  body > header #signup a:first-child {
+    padding-left: 0;
+    border-right: 1px solid white;
+  }
+
+  /* navigation */
+
+#menu ul {
+    margin: 0;
+    padding: 0;
+  }
+
+#menu li {
+    background-color: white;
+    text-align: center;
+  
+    list-style-type: none;
+  
+    padding: 1em 0;
+  }
+
+#menu li a{
+    color: black;
+    text-decoration: none;
+  }
+
+  #menu li:hover {
+  background-color: #2a2f33;
+}
+
+#menu li:hover a{
+    color: white;
+  }
+  
+  #hamburger, .hamburger {
+    display: none;
+  }
+
+
+  
+  
