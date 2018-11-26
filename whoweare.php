@@ -1,0 +1,9 @@
+<?php
+  $path_to_style="whoweare/style.css";
+  $path_to_layout="whoweare/layout.css";
+  $text_file="whoweare.txt";
+  include('templates/header_with_login.php');
+  include('templates/import_text.php');
+?>
+<body>
+</html>

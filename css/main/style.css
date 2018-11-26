@@ -1,4 +1,3 @@
-/* header */
 :root {
   --darkB-accent-color: #525564;
   --mainB-color:#74828F;
@@ -10,30 +9,29 @@
 
 
   /* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: var(--text-color);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: var(--text-color);
-  color: var(--mainB-color);
-}
+  nav ul,ul {
+    list-style-type: none;
+  }
+  nav a {
+    color: var(--text-color);
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  nav a:hover {
+    background-color: var(--text-color);
+    color: var(--mainB-color);
+  }
 
 #main {
-  text-align: center;
-  padding: 150px 200px;
-}
-#main h1 {
   color: var(--text-color);
-  font-size: 50px;
+  text-align:center;
 }
-#main a {
+
+#loginLinks a {
+  text-align:center;
   border-radius:3px;
   background-color: var(--mainB-color);
   color: var(--text-color);
@@ -41,7 +39,7 @@
   font-size: 30px;
   padding: 10px;
 }
-#main a:hover{
+#loginLinks a:hover{
   background-color: var(--text-color);
   color:var(--mainB-color);
 }
@@ -58,6 +56,7 @@
 
   #main h1 {
     font-weight:bold;
+    font-size: 60px;
+    line-height:0.9em;
   }
-  
   
