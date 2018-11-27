@@ -13,9 +13,8 @@
                            FROM patients 
                            WHERE medic_id = ?');
     $stmt->execute(array($id));
-    return $stmt->fetch();  
+    return $stmt->fetchAll();  
   }
   
-
-?>
+?> 
 

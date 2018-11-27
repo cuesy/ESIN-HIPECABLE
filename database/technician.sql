@@ -20,7 +20,7 @@ CREATE TABLE patients (
   cc INTEGER CONSTRAINT valid_cc CHECK (cc >= 10000000 AND cc <= 99999999),
   weight NUMERIC(5,2) CONSTRAINT valid_weight CHECK (weight >= 0),
   height NUMERIC(5,2) CONSTRAINT valid_height CHECK (height >= 0),
-  email VARCHAR CONSTRAINT valid_email CHECK ( email LIKE '%_@__%.__%'),
+  email VARCHAR NULL CONSTRAINT valid_email CHECK ((email LIKE '%_@__%.__%') OR (email IS NULL)),
   medic_id INTEGER REFERENCES medics(id) 
 );
 

@@ -1,6 +1,6 @@
 <section id="patient_register">
   <h2>New Patient</h2>
-  <form action="action_patient_register.php" method="post">
+  <form action=<?="action_patient_register.php?id=".$medic_id?> method="post">
     <input type="text" name="name" placeholder="name">
     <input type="date" name="birthdate" placeholder="birthdate">
     <input type="number" name="cc" placeholder="cc">
