@@ -4,6 +4,7 @@
     <input type="text" name="name" placeholder="name">
     <input type="password" name="password" placeholder="password">
     <input type="text" name="email" placeholder="email">
+    <input type="text" name="user_type" placeholder="type">
     <input type="submit" value="Register">
   </form>  
 </section>

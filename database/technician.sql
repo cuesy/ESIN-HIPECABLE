@@ -1,15 +1,17 @@
+CREATE TABLE usersGen (
+id SERIAL PRIMARY KEY,  
+name VARCHAR NOT NULL CONSTRAINT valid_name CHECK (name NOT LIKE '%[^0-9]%'),
+password VARCHAR,
+email VARCHAR NOT NULL UNIQUE CONSTRAINT valid_email CHECK ( email LIKE '%_@__%.__%'), 
+validated BOOLEAN
+);
+
 CREATE TABLE technicians (
-  id SERIAL PRIMARY KEY,  
-  name VARCHAR NOT NULL CONSTRAINT valid_name CHECK (name NOT LIKE '%[^0-9]%'),
-  password VARCHAR,
-  email VARCHAR NOT NULL UNIQUE CONSTRAINT valid_email CHECK ( email LIKE '%_@__%.__%') 
+id INTEGER PRIMARY KEY REFERENCES usersGen(id)
 );
 
 CREATE TABLE medics (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR NOT NULL CONSTRAINT valid_name CHECK (name NOT LIKE '%[^0-9]%'),  
-  password VARCHAR, 
-  email VARCHAR NOT NULL UNIQUE CONSTRAINT valid_email CHECK ( email LIKE '%_@__%.__%')  
+  id INTEGER PRIMARY KEY REFERENCES usersGen(id)
 );
 
 
@@ -21,16 +23,19 @@ CREATE TABLE patients (
   weight NUMERIC(5,2) CONSTRAINT valid_weight CHECK (weight >= 0),
   height NUMERIC(5,2) CONSTRAINT valid_height CHECK (height >= 0),
   email VARCHAR NULL CONSTRAINT valid_email CHECK ((email LIKE '%_@__%.__%') OR (email IS NULL)),
-  medic_id INTEGER REFERENCES medics(id) 
+  medic_id INTEGER REFERENCES medics(id),
+  notes TEXT
 );
 
 
 CREATE TABLE operations (
-    id SERIAL PRIMARY KEY,    
+    id SERIAL PRIMARY KEY,
     patient_id INTEGER REFERENCES patients(id),
     medic_id INTEGER REFERENCES medics(id),
-    technician_id INTEGER REFERENCES technicians(id)
-);
+    technician_id INTEGER REFERENCES technicians(id),
+    date TIMESTAMP WITHOUT TIME ZONE,
+    notes TEXT
+    );
 
 CREATE TABLE op_data (
   id SERIAL PRIMARY KEY,
@@ -47,14 +52,21 @@ CREATE TABLE op_data (
 );
 
 
-INSERT INTO technicians VALUES (DEFAULT, 'Pedro Dias', '123456', 'hjjsa@hotmail.com');
-INSERT INTO technicians VALUES (DEFAULT, 'Ana Costa', '123456', 'asdasdas@hotmail.com');
-INSERT INTO technicians VALUES (DEFAULT, 'Pedro Costa', '123456', 'asd@kdaslsa.com');
-INSERT INTO technicians VALUES (DEFAULT, 'Ana Dias', '123456', 'aaksasa@gmail.com');
+INSERT INTO usersGen VALUES (DEFAULT, 'Pedro Dias', '123456', 'hjjsa@hotmail.com',TRUE);
+INSERT INTO medics VALUES(1);
+INSERT INTO usersGen VALUES (DEFAULT, 'Ana Costa', '123456', 'asdasdas@hotmail.com', TRUE);
+INSERT INTO medics VALUES(2);
+INSERT INTO usersGen VALUES (DEFAULT, 'Pedro Costa', '123456', 'asd@kdaslsa.com',TRUE);
+INSERT INTO medics VALUES(3);
+INSERT INTO usersGen VALUES (DEFAULT, 'Ana Dias', '123456', 'aaksasa@gmail.com',TRUE);
+INSERT INTO medics VALUES(4);
 
-INSERT INTO medics VALUES (DEFAULT, 'Dr. Dias', '123456', 'PEDROFILIPE@HOTMAIL.COM');
-INSERT INTO medics VALUES (DEFAULT, 'Dra. Ana', '123456','JASAJDA@hotmail.com');
-INSERT INTO medics VALUES (DEFAULT, 'Dra. Ana Chiquitita', '123456', 'asdasd@hotmail.com');
+INSERT INTO usersGen VALUES (DEFAULT, 'Dr. Dias', '123456', 'PEDROFILIPE@HOTMAIL.COM',TRUE);
+INSERT INTO technicians VALUES(5);
+INSERT INTO usersGen VALUES (DEFAULT, 'Dra. Ana', '123456','JASAJDA@hotmail.com',TRUE);
+INSERT INTO technicians VALUES(6);
+INSERT INTO usersGen VALUES (DEFAULT, 'Dra. Ana Chiquitita', '123456', 'asdasd@hotmail.com',TRUE);
+INSERT INTO technicians VALUES(7);
 
 INSERT INTO patients VALUES (DEFAULT, 'Engenheira Ana', DATE'1920-02-15', 14572710, 82, 170,'PEDROFILIPE@HOTMAIL.COM', 1);
 INSERT INTO patients VALUES (DEFAULT, 'Engenheiro Pedro', DATE'1950-02-15', 12542710, 150, 250, 'PEDROFILIPE@HOTMAIL.COM', 1);
@@ -62,7 +74,7 @@ INSERT INTO patients VALUES (DEFAULT, 'Ana', DATE'1997-02-15', 12345678, 50, 160
 INSERT INTO patients VALUES (DEFAULT, 'Pedro', DATE'2001-02-15', 98745632, 65, 185, 'PEDROFILIPE@HOTMAIL.COM', 1);
 INSERT INTO patients VALUES (DEFAULT, 'Filipe', DATE'3652-02-15', 35741598, 87, 168, 'PEDROFILIPE@HOTMAIL.COM', 2);
 
-INSERT INTO operations VALUES (DEFAULT, 1, 1, 3);
+INSERT INTO operations VALUES (DEFAULT, 1, 1, 5, '2018-11-27 10:30:10');
 
 INSERT INTO op_data VALUES (DEFAULT, 1, TIME'4:05', TIME'4:00', 5, 10, 55.3, 42, 65, 75.8, 5.3 );
 INSERT INTO op_data VALUES (DEFAULT, 1, TIME'5:05', TIME'4:00', 5, 10, 55.3, 42, 65, 75.8, 5.3 );
