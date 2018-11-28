@@ -52,20 +52,20 @@ CREATE TABLE op_data (
 );
 
 
-INSERT INTO usersGen VALUES (DEFAULT, 'Pedro Dias', '123456', 'hjjsa@hotmail.com',TRUE);
+INSERT INTO usersGen VALUES (DEFAULT, 'Pedro Dias', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'hjjsa@hotmail.com',TRUE);
 INSERT INTO medics VALUES(1);
-INSERT INTO usersGen VALUES (DEFAULT, 'Ana Costa', '123456', 'asdasdas@hotmail.com', TRUE);
+INSERT INTO usersGen VALUES (DEFAULT, 'Ana Costa', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'asdasdas@hotmail.com', TRUE);
 INSERT INTO medics VALUES(2);
-INSERT INTO usersGen VALUES (DEFAULT, 'Pedro Costa', '123456', 'asd@kdaslsa.com',TRUE);
+INSERT INTO usersGen VALUES (DEFAULT, 'Pedro Costa', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'asd@kdaslsa.com',TRUE);
 INSERT INTO medics VALUES(3);
-INSERT INTO usersGen VALUES (DEFAULT, 'Ana Dias', '123456', 'aaksasa@gmail.com',TRUE);
+INSERT INTO usersGen VALUES (DEFAULT, 'Ana Dias', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'aaksasa@gmail.com',TRUE);
 INSERT INTO medics VALUES(4);
 
-INSERT INTO usersGen VALUES (DEFAULT, 'Dr. Dias', '123456', 'PEDROFILIPE@HOTMAIL.COM',TRUE);
+INSERT INTO usersGen VALUES (DEFAULT, 'Dr. Dias', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'PEDROFILIPE@HOTMAIL.COM',TRUE);
 INSERT INTO technicians VALUES(5);
-INSERT INTO usersGen VALUES (DEFAULT, 'Dra. Ana', '123456','JASAJDA@hotmail.com',TRUE);
+INSERT INTO usersGen VALUES (DEFAULT, 'Dra. Ana', '7c4a8d09ca3762af61e59520943dc26494f8941b','JASAJDA@hotmail.com',TRUE);
 INSERT INTO technicians VALUES(6);
-INSERT INTO usersGen VALUES (DEFAULT, 'Dra. Ana Chiquitita', '123456', 'asdasd@hotmail.com',TRUE);
+INSERT INTO usersGen VALUES (DEFAULT, 'Dra. Ana Chiquitita', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'asdasd@hotmail.com',TRUE);
 INSERT INTO technicians VALUES(7);
 
 INSERT INTO patients VALUES (DEFAULT, 'Engenheira Ana', DATE'1920-02-15', 14572710, 82, 170,'PEDROFILIPE@HOTMAIL.COM', 1);
