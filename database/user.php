@@ -15,6 +15,15 @@
     return $stmt->fetch()['id'];  
   }
 
+  function getUserEmailById ($id) {
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT email 
+                           FROM usersGen 
+                           WHERE id = ?');
+    $stmt->execute(array($id));
+    return $stmt->fetch()['email'];  
+  }
+
   function getPasswordByEmail($email) {
     global $dbh;
     $stmt = $dbh->prepare('SELECT password 

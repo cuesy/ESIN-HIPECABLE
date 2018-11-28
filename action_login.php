@@ -17,7 +17,10 @@
   else {
       if ($user_type=='medic') {
           try{
-            header("Location: medic_home.php?id=".$user_id);
+            session_start();
+            $_SESSION['id']=$user_id;
+            $_SESSION['email']=$email;
+            header("Location: medic_home.php?id=".$_SESSION['id']);
           } catch(PDOException $e) {
             print_r($e); 
             die($user_id);
@@ -27,7 +30,10 @@
       }
       else if($user_type=='technician') {
         try{
-            header("Location: technician_home.php?id=".$user_id);
+           session_start();
+           $_SESSION['id']=$user_id;
+           $_SESSION['email']=$email;
+           header("Location: technician_home.php?id=".$_SESSION['id']);
           } catch(PDOException $e) {
             print_r($e); 
             die($user_id);
@@ -37,7 +43,10 @@
       }
       else if($user_type=='admin') {
         try{
-            header("Location: admin_home.php?id=".$user_id);
+           session_start();
+           $_SESSION['id']=$user_id;
+           $_SESSION['email']=$email;
+            header("Location: admin_home.php?id=".$_SESSION['id']);
           } catch(PDOException $e) {
             print_r($e); 
             die($user_id);
