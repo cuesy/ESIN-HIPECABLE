@@ -15,6 +15,59 @@
     return $stmt->fetch()['id'];  
   }
 
+  function getPasswordByEmail($email) {
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT password 
+                           FROM usersGen 
+                           WHERE email = ?');
+    $stmt->execute(array($email));
+    return $stmt->fetch()['password'];  
+  }
+
+  function checkLogin($email,$password) {
+    if (sha1($password)==getPasswordByEmail($email)) {
+      return TRUE;
+    }
+    else {
+      return FALSE;
+    }
+  }
+
+  function getMedicIdFromUser($id) {
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT id 
+                           FROM medics 
+                           WHERE id = ?');
+    $stmt->execute(array($id));
+    return $stmt->fetch()['id'];  
+  }
+
+  function getTechnicianIdFromUser($id) {
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT id 
+                           FROM technicians 
+                           WHERE id = ?');
+    $stmt->execute(array($id));
+    return $stmt->fetch()['id'];  
+  }
+
+  function checkUserType($email) {
+    $id=getUserIdByEmail($email);
+    $id_medic=getMedicIdFromUser($id);
+    $id_technician=getTechnicianIdFromUser($id);
+    if ($id_medic==[] and $id_technician!=[]) {
+      return 'technician';
+    }
+    else if ($id_medic!=[] and $id_technician==[]) {
+      return 'medic';
+    }
+    else{ 
+      return 'admin';
+    }
+  }
+
+
+
   function setMedic($id) {
     global $dbh;
     $stmt = $dbh->prepare('INSERT INTO medics (id) VALUES(?)');
