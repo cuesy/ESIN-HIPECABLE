@@ -16,5 +16,15 @@
     return $stmt->fetchAll();  
   }
   
+  function getPatient($id){
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * 
+                           FROM patients 
+                           WHERE id = ?');
+    $stmt->execute(array($id));
+    return $stmt->fetch(); 
+  
+  }
+
 ?> 
 
