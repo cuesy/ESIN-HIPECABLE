@@ -68,7 +68,7 @@ INSERT INTO technicians VALUES(6);
 INSERT INTO usersGen VALUES (DEFAULT, 'Dra. Ana Chiquitita', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'asdasd@hotmail.com',TRUE);
 INSERT INTO technicians VALUES(7);
 
-INSERT INTO patients VALUES (DEFAULT, 'Engenheira Ana', DATE'1920-02-15', 14572710, 82, 170,'PEDROFILIPE@HOTMAIL.COM', 1);
+INSERT INTO patients VALUES (DEFAULT, 'Engenheira Ana', DATE'1920-02-15', 14572710, 82, 170,'PEDROFILIPE@HOTMAIL.COM', 1, 'Eu adoro esin de morte. \n acho mesmo que é a melhor cadeira do mundo. \n aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 INSERT INTO patients VALUES (DEFAULT, 'Engenheiro Pedro', DATE'1950-02-15', 12542710, 150, 250, 'PEDROFILIPE@HOTMAIL.COM', 1);
 INSERT INTO patients VALUES (DEFAULT, 'Ana', DATE'1997-02-15', 12345678, 50, 160, 'PEDROFILIPE@HOTMAIL.COM', 1);
 INSERT INTO patients VALUES (DEFAULT, 'Pedro', DATE'2001-02-15', 98745632, 65, 185, 'PEDROFILIPE@HOTMAIL.COM', 1);

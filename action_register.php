@@ -13,9 +13,15 @@
     $user_id=getUserIdByEmail($email);
     if ($user_type=='Medic') {
       setMedic($user_id);
+      session_start();
+      $_SESSION['id']=$user_id;
+      $_SESSION['email']=$email;
       header("Location: medic_home.php?id=".$user_id);}
     else if($user_type=='Technician') {
       setTechnician($user_id);
+      session_start();
+      $_SESSION['id']=$user_id;
+      $_SESSION['email']=$email;
       header("Location: technician_home.php?id=".$user_id);}
   } catch(PDOException $e) {   
     print_r($e); 

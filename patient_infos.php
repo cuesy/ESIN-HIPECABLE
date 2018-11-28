@@ -17,23 +17,40 @@
     <table border="1">
         <tr>
             <th>Name</th>
+            <th><?=$patient['name']?></th>
+        <tr>
+        <tr>
             <th>Birthday</th>
+            <th><?=$patient['birthday']?></th>
+        <tr>
             <th>CC</th>
+            <th><?=$patient['cc']?></th>
+        <tr>
+        <tr>
             <th>Weight</th>
+            <th><?=$patient['weight']?></th>
+        <tr>
+        <tr>
             <th>Height</th>
+            <th><?=$patient['height']?></th>
+        <tr>
+        <tr>
             <th>Email</th>
-            <th>Notes</th>
+            <th><?=$patient['email']?></th>
+        <tr>
+        <th>Notes</th>
+        <th>
+        <div class="wrap-collabsible">
+            <input id="collapsible" class="toggle" type="checkbox">
+            <label for="collapsible" class="lbl-toggle">See Notes</label>
+            <div class="collapsible-content">
+                <div class="content-inner">
+                <?=$patient['notes']?> 
+                </div>
+            </div>
+        </div>
+        </th>
         </tr>
-        <tr>              
-        <th><?=$patient['name']?></th>
-        <th><?=$patient['birthday']?></th>
-        <th><?=$patient['cc']?></th>
-        <th><?=$patient['weight']?></th>
-        <th><?=$patient['height']?></th>
-        <th><?=$patient['email']?></th>
-        <th><?=$patient['notes']?></th>        
-        </tr>
-        
     </table>    
   </body>
 </html>
